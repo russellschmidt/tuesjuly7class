@@ -27,7 +27,7 @@ class GreenViewController: UIViewController {
 
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-    let vc = storyboard.instantiateViewControllerWithIdentifier("orangeVC") as! UIViewController
+    let vc = storyboard.instantiateViewControllerWithIdentifier("orangeVC") as! OrangeViewController
 
     vc.output = "I am Green"
 

@@ -12,7 +12,7 @@ class OrangeViewController: UIViewController {
 
   @IBOutlet weak var orangeOutputLabel: UILabel!
 
-  var output: String
+  var output: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
