@@ -12,6 +12,7 @@ class OrangeViewController: UIViewController {
 
   @IBOutlet weak var orangeOutputLabel: UILabel!
 
+  @IBOutlet var swipeGesture: UISwipeGestureRecognizer!
   
   var output: String = ""
 
@@ -21,6 +22,7 @@ class OrangeViewController: UIViewController {
       //self.orangeOutputLabel.text = outputText
 
       self.orangeOutputLabel.text = output
+      self.orangeOutputLabel.textColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +30,16 @@ class OrangeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-  @IBAction func goBack(sender: AnyObject) {
+  func goBack() {
     self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+  }
+
+  @IBAction func goBack(sender: AnyObject) {
+    goBack()
+  }
+
+
+  @IBAction func swipeLeftToGoBack(sender: UISwipeGestureRecognizer) {
+    goBack()
   }
 }

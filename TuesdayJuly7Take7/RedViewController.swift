@@ -40,6 +40,10 @@ class RedViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+  
+  func popBack() {
+    self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+  }
 
 
   @IBAction func goBack(sender: AnyObject) {
@@ -51,8 +55,8 @@ class RedViewController: UIViewController {
     self.tapLabel.text = "\(Int(redStepper.value))"
 
     // if you change the stepper, check to see if it equals the tap count to pop back
-    if self.tapCounter.text!.toInt() == Int(self.redStepper.value) {
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    if self.tapCounter.text!.toInt() == Int(self.redStepper.value){
+        popBack()
     }
   }
 
@@ -68,7 +72,7 @@ class RedViewController: UIViewController {
     }
     // test to see if its time to pop back
     if self.tapCount == redStepper.value {
-      self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+      popBack()
     }
   }
 }

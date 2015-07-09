@@ -32,20 +32,38 @@
                                     <action selector="goBack:" destination="bmK-HC-095" eventType="touchUpInside" id="P9P-5M-IK7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to return" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWu-ax-sjc">
+                                <rect key="frame" x="36" y="100" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="NSS-7l-tP2" firstAttribute="top" secondItem="GEQ-HO-JKr" secondAttribute="bottom" constant="8" id="Aal-oN-jRr"/>
                             <constraint firstItem="GEQ-HO-JKr" firstAttribute="top" secondItem="n6b-zw-PZn" secondAttribute="bottom" constant="13" id="ISC-Rg-6mF"/>
                             <constraint firstItem="GEQ-HO-JKr" firstAttribute="leading" secondItem="5DK-we-CCc" secondAttribute="leadingMargin" constant="20" id="Rm9-wA-vuw"/>
+                            <constraint firstItem="eWu-ax-sjc" firstAttribute="leading" secondItem="5DK-we-CCc" secondAttribute="leadingMargin" constant="20" id="cpM-ht-E9O"/>
                             <constraint firstItem="NSS-7l-tP2" firstAttribute="leading" secondItem="5DK-we-CCc" secondAttribute="leadingMargin" constant="20" id="hLg-YO-o3q"/>
+                            <constraint firstItem="eWu-ax-sjc" firstAttribute="top" secondItem="NSS-7l-tP2" secondAttribute="bottom" constant="8" id="t6T-eI-3dQ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="TkV-nR-QRX" appends="YES" id="BKf-Db-V55"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="orangeOutputLabel" destination="GEQ-HO-JKr" id="ySQ-pW-UpM"/>
+                        <outlet property="swipeGesture" destination="TkV-nR-QRX" id="3m8-ck-bpj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="753-T0-g8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="TkV-nR-QRX">
+                    <connections>
+                        <action selector="swipeDownFail:" destination="bmK-HC-095" id="mC4-pC-Uaw"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="672" y="-381"/>
         </scene>
