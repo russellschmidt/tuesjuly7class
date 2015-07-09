@@ -23,7 +23,15 @@ class GreenViewController: UIViewController {
 
   @IBOutlet weak var textField: UITextField!
 
+<<<<<<< HEAD
   @IBOutlet weak var viewSwitch: UISwitch!
+=======
+  @IBAction func goButton(sender: AnyObject) {
+
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+    let vc = storyboard.instantiateViewControllerWithIdentifier("orangeVC") as! OrangeViewController
+>>>>>>> 45ca512d470a43ba5ff89fc111e4edd877e370da
 
   @IBAction func goButton(sender: AnyObject) {
 
