@@ -17,7 +17,7 @@ class BlueViewController: UIViewController {
         
         // Do any additional setup after loading the view.
       //how long in seconds you need to hold down the long press. Default is 0.5 sec
-      self.longPressGesture.minimumPressDuration = 2.0
+      self.longPressGesture.minimumPressDuration = 1.0
     }
 
     override func didReceiveMemoryWarning() {
