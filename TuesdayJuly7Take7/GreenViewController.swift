@@ -31,7 +31,7 @@ class GreenViewController: UIViewController {
     if self.textField.text != "" {
       // 1 - instantiate the storyboard
       let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      // 2 - instantiate the VC object
+      // 2 - instantiate the VC object. NOTE THE DATA TYPE IS THE SPECIFIC SUBCLASS FOR THAT VC DUMMY
       let vc = storyboard.instantiateViewControllerWithIdentifier("orangeVC") as! OrangeViewController
       // 3 - set the VC object property
       vc.output = self.textField.text

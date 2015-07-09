@@ -49,6 +49,11 @@ class RedViewController: UIViewController {
 
   @IBAction func stepperAction(sender: UIStepper) {
     self.tapLabel.text = "\(Int(redStepper.value))"
+
+    // if you change the stepper, check to see if it equals the tap count to pop back
+    if self.tapCounter.text!.toInt() == Int(self.redStepper.value) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
   }
 
 
@@ -61,6 +66,7 @@ class RedViewController: UIViewController {
       self.tapCount += 1.0
       self.tapCounter.text = "\(Int(self.tapCount))"
     }
+    // test to see if its time to pop back
     if self.tapCount == redStepper.value {
       self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
