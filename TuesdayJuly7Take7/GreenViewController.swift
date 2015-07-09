@@ -23,15 +23,31 @@ class GreenViewController: UIViewController {
 
   @IBOutlet weak var textField: UITextField!
 
+  @IBOutlet weak var viewSwitch: UISwitch!
+
   @IBAction func goButton(sender: AnyObject) {
 
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    // if there is text, go to Orange. Else, use switch to go to Red or Blue
+    if self.textField.text != "" {
+      // 1 - instantiate the storyboard
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      // 2 - instantiate the VC object
+      let vc = storyboard.instantiateViewControllerWithIdentifier("orangeVC") as! OrangeViewController
+      // 3 - set the VC object property
+      vc.output = self.textField.text
 
-    let vc = storyboard.instantiateViewControllerWithIdentifier("orangeVC") as! UIViewController
-
-    vc.output = "I am Green"
-
-    self.presentViewController(vc, animated: true, completion: nil)
-
+      // 4 - engage(word?) the VC
+      self.presentViewController(vc, animated: true, completion: nil)
+    } else {
+      if self.viewSwitch.on {
+        // go to red
+        self.performSegueWithIdentifier("greenToRedSegue", sender: self)
+      } else {
+        // go to blue
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("blueVC") as! BlueViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+      }
+    }
   }
 }

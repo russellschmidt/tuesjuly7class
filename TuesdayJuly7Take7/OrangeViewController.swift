@@ -12,7 +12,7 @@ class OrangeViewController: UIViewController {
 
   @IBOutlet weak var orangeOutputLabel: UILabel!
 
-  var output: String
+  var output: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,4 +26,8 @@ class OrangeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+  @IBAction func goBack(sender: AnyObject) {
+    self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+  }
 }
